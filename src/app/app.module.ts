@@ -12,6 +12,7 @@ import { ModuleListComponentComponent } from './module-list-component/module-lis
 import { LessonTabsComponentComponent } from './lesson-tabs-component/lesson-tabs-component.component';
 import { TopicPillsComponentComponent } from './topic-pills-component/topic-pills-component.component';
 import { WidgetListComponentComponent } from './widget-list-component/widget-list-component.component';
+import {routing} from './app.routing';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { WidgetListComponentComponent } from './widget-list-component/widget-lis
     WidgetListComponentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing
   ],
   providers: [
     CourseServiceClient,
