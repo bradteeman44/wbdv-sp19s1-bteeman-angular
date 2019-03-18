@@ -25,12 +25,11 @@
       </div>
     </div>
   </div>
-  <router-outlet></router-outlet>
   <div class="row">
     <div
       class="card col-xs-12 col-sm-12 col-md-4 col-lg-2"
       *ngFor="let course of courses"
-      (click)="navToCourse(course.id)">
+      (click)="selectCourse(course.id)">
       <img
         class="card-img-top"
         src="https://picsum.photos/300/200" alt=""/>
@@ -45,6 +44,13 @@
           Card text.
         </p>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div
+      class="col-2"
+      id="modules">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

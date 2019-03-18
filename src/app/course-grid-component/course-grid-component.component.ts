@@ -21,8 +21,8 @@ export class CourseGridComponentComponent implements OnInit {
         this.courses = courses;
       });
   }
-  navToCourse(courseId): void {
-    this.router.navigate(['course/:courseId/module']);
+  selectCourse(courseId): void {
+    this.router.navigate(['course', courseId, 'module']);
   }
 
 }
