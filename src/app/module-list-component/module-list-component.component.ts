@@ -17,22 +17,26 @@ export class ModuleListComponentComponent implements OnInit {
     private courseService: CourseServiceClient,
     private router: Router
   ) { }
+  courseId: string;
   course: Course = new Course();
   modules: [];
   ngOnInit() {
     this.activatedRoute.params
       .subscribe(params => {
-        this.courseService.findCourseById(params)
+        this.courseId = params['courseId'];
+        console.log(params)
+        this.courseService.findCourseById(this.courseId)
           .then(course => {
             this.course = course;
           });
-        this.moduleService.findModulesForCourse(params)
+        this.moduleService.findModulesForCourse(this.courseId)
           .then(modules => {
             this.modules = modules;
           });
       });
   }
   selectModule(moduleId): void {
+    console.log(moduleId)
     this.router.navigate(['course', this.course.id, 'module', moduleId, 'lesson']);
   }
 
