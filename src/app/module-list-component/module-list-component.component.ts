@@ -20,6 +20,7 @@ export class ModuleListComponentComponent implements OnInit {
   courseId: string;
   course: Course = new Course();
   modules: [];
+  selectedModuleId: any;
   ngOnInit() {
     this.activatedRoute.params
       .subscribe(params => {
@@ -33,6 +34,7 @@ export class ModuleListComponentComponent implements OnInit {
           .then(modules => {
             this.modules = modules;
           });
+        this.selectedModuleId = params['moduleId'];
       });
   }
   selectModule(moduleId): void {

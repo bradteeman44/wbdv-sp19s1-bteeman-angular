@@ -1,3 +1,10 @@
-<p>
-  topic-pills-component works!
-</p>
+<ul class="nav nav-pills">
+  <li class="nav-item"
+      *ngFor="let topic of topics">
+    <a class="nav-link wbdv"
+       href="#"
+       [ngClass]="{'active': topic.id == selectedTopicId}">
+      {{topic.title}}
+    </a>
+  </li>
+</ul>

@@ -3,22 +3,25 @@
     {{course.title}}
   </h1>
   <div class="row">
-    <div class="col-4">
+    <div class="col-3">
       <ul class="list-group">
         <li class="list-group-item active">
           Modules
         </li>
         <li
-          class="list-group-item"
+          class="list-group-item wbdv"
           id="module"
+          [ngClass]="{'active': module.id == selectedModuleId}"
           *ngFor="let module of modules"
           (click)="selectModule(module.id)">
           {{module.title}}
         </li>
       </ul>
     </div>
-    <div class="col-8">
+    <div class="col-9">
       <app-lesson-tabs-component></app-lesson-tabs-component>
+      <app-topic-pills-component></app-topic-pills-component>
+      <app-widget-list-component></app-widget-list-component>
     </div>
   </div>
 </div>
