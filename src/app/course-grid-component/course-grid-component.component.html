@@ -1,56 +1,13 @@
-<div id="courseGrid">
-  <div
-    class="container d-none d-md-block"
-    id="header">
-    <div
-      class="row">
-      <div
-        class="col-6">
-        Title
+<div class="row">
+  <div class="col-sm-2"
+       *ngFor="let course of courses"
+       (click)="selectCourse(course.id)">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{course.title}}</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
-      <div
-        class="col-2">
-        Owned by
-      </div>
-      <div
-        class="col-2">
-        Last modified by me
-      </div>
-      <div
-        class="col-1">
-      </div>
-      <div
-        class="col-1">
-        <i class="fa fa-sort-alpha-asc"></i>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div
-      class="card col-xs-12 col-sm-12 col-md-4 col-lg-2"
-      *ngFor="let course of courses"
-      (click)="selectCourse(course.id)">
-      <img
-        class="card-img-top"
-        src="https://picsum.photos/300/200" alt=""/>
-      <div
-        class="card-body">
-        <h5
-          class="card-title">
-          {{course.title}}
-        </h5>
-        <p
-          class="card-text">
-          Card text.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div
-      class="col-2"
-      id="modules">
-      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

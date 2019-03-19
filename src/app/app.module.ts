@@ -13,6 +13,7 @@ import { LessonTabsComponentComponent } from './lesson-tabs-component/lesson-tab
 import { TopicPillsComponentComponent } from './topic-pills-component/topic-pills-component.component';
 import { WidgetListComponentComponent } from './widget-list-component/widget-list-component.component';
 import {routing} from './app.routing';
+import { WhiteboardComponent } from './whiteboard/whiteboard.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {routing} from './app.routing';
     ModuleListComponentComponent,
     LessonTabsComponentComponent,
     TopicPillsComponentComponent,
-    WidgetListComponentComponent
+    WidgetListComponentComponent,
+    WhiteboardComponent
   ],
   imports: [
     BrowserModule,
