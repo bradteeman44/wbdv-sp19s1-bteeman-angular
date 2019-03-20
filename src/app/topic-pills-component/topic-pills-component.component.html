@@ -1,9 +1,10 @@
 <ul class="nav nav-pills">
   <li class="nav-item"
-      *ngFor="let topic of topics">
+      *ngFor="let topic of topics"
+      id="topics">
     <a class="nav-link wbdv"
-       href="#"
-       [ngClass]="{'active': topic.id == selectedTopicId}">
+       [ngClass]="{'active': topic.id == selectedTopicId}"
+       (click)="selectTopic(topic.id)">
       {{topic.title}}
     </a>
   </li>

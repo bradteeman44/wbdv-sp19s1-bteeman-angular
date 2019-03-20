@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <div class="row">
   <div class="col-sm-2"
        *ngFor="let course of courses"
@@ -6,8 +7,12 @@
       <div class="card-body">
         <h5 class="card-title">{{course.title}}</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <button class="btn btn-primary"
+           (click)="selectCourse(course.id)">
+          Course Details
+        </button>
       </div>
     </div>
   </div>
+</div>
 </div>

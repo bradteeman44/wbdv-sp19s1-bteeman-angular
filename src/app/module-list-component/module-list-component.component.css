@@ -2,3 +2,12 @@
   background-color: #5a6268;
   border-color: #5a6268;
 }
+
+h1 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#modules {
+  margin-bottom: 15px;
+}

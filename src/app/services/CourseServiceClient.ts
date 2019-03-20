@@ -2,7 +2,7 @@ export class CourseServiceClient {
   COURSE_API_URL = 'https://wbdv-sp19s1-bteeman-db-service.herokuapp.com/api/courses';
 
   findAllCourses = () =>
-    fetch('https://wbdv-sp19s1-bteeman-db-service.herokuapp.com/api/users/72/courses')
+    fetch(this.COURSE_API_URL)
       .then(response => response.json())
 
   findCourseById = courseId =>

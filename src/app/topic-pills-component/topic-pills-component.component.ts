@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {LessonServiceClient} from '../services/LessonServiceClient';
 import {TopicServiceClient} from '../services/TopicServiceClient';
+import {Topic} from '../models/topic.model.client';
 
 @Component({
   selector: 'app-topic-pills-component',
@@ -15,11 +16,11 @@ export class TopicPillsComponentComponent implements OnInit {
     private topicService: TopicServiceClient,
     private router: Router
   ) { }
-  selectedTopicId: any;
-  courseId: any;
-  moduleId: any;
-  lessonId: any;
-  topics: []
+  selectedTopicId: number;
+  courseId: number;
+  moduleId: number;
+  lessonId: number;
+  topics: Topic [];
   ngOnInit() {
     this.activatedRoute.params
       .subscribe(params => {
@@ -32,5 +33,10 @@ export class TopicPillsComponentComponent implements OnInit {
             this.topics = topics;
           });
       });
+  }
+
+  selectTopic(topicId) {
+    console.log(topicId)
+    this.router.navigate(['course', this.courseId, 'module', this.moduleId, 'lesson', this.lessonId, 'topic', topicId, 'widget']);
   }
 }
